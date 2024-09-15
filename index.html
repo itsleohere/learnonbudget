@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Course or Skill</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        h2 {
+            color: #00d4ff;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #00d4ff;
+            border-radius: 5px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #00d4ff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #00a3cc;
+        }
+        video {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+        .currency-select {
+            margin-bottom: 20px;
+        }
+        .futuristic-design {
+            background: linear-gradient(145deg, #1e1e1e, #2e2e2e);
+            box-shadow: 10px 10px 20px #0e0e0e, -10px -10px 20px #3e3e3e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video controls autoplay muted loop>
+            <source src="your-video-file.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="futuristic-design">
+            <h2>Request Any leaked Course or Skill</h2>
+            <p>Not sure about the exact course? Just tell us what skill you want to learn, and we'll suggest the best course for you!</p>
+            <form id="courseForm" onsubmit="sendWhatsAppMessage(); return false;">
+                <label for="courseName">Course/Skill you want to learn:</label>
+                <input type="text" id="courseName" name="courseName" placeholder="E.g., Web Development, Data Science" required>
+
+                <div class="currency-select">
+                    <label for="currency">Choose your preferred currency:</label>
+                    <select id="currency" name="currency" required>
+                        <option value="USD">USD - US Dollar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="INR">INR - Indian Rupee</option>
+                        <option value="BTC">BTC - Bitcoin</option>
+                        <option value="ETH">ETH - Ethereum</option>
+                        <!-- Add more currencies as needed -->
+                    </select>
+                </div>
+
+                <label for="coursePrice">Your Price:</label>
+                <input type="number" id="coursePrice" name="coursePrice" required>
+
+                <label for="message">Additional Message:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any additional details you'd like to share..." required></textarea>
+
+                <button type="submit">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function sendWhatsAppMessage() {
+            var courseName = document.getElementById('courseName').value;
+            var coursePrice = document.getElementById('coursePrice').value;
+            var currency = document.getElementById('currency').value;
+            var additionalMessage = document.getElementById('message').value;
+
+            var message = Hello, I would like to request the following course or skill:\n\nCourse/Skill: ${courseName}\nPrice: ${currency} ${coursePrice}\n\nAdditional Message:\n${additionalMessage};
+
+            var whatsappNumber = '+817084673282'; 
+            var url = https://wa.me/${encodeURIComponent(whatsappNumber)}?text=${encodeURIComponent(message)};
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
